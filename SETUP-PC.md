@@ -7,7 +7,7 @@ Welcome, PC people!
 I should confess up-front: setting up a powerful environment to work at the forefront of AI is not as simple as I'd like. For most people these instructions will go great; but in some cases, for whatever reason, you'll hit a problem. Please don't hesitate to reach out - I am here to get you up and running quickly. There's nothing worse than feeling _stuck_. Message me, email me or LinkedIn message me and I will unstick you quickly!
 
 Email: ed@edwarddonner.com  
-LinkedIn: https://www.linkedin.com/in/eddonner/  
+LinkedIn: https://www.linkedin.com/in/eddonner/
 
 I use a platform called Anaconda to set up your environment. It's a powerful tool that builds a complete science environment. Anaconda ensures that you're working with the right version of Python and all your packages are compatible with mine, even if our systems are completely different. It takes more time to set up, and it uses more hard drive space (5+ GB) but it's very reliable once its working.
 
@@ -17,12 +17,12 @@ Having said that: if you have any problems with Anaconda, I've provided an alter
 
 If you are relatively new to using the Command Prompt, here is an excellent [guide](https://chatgpt.com/share/67b0acea-ba38-8012-9c34-7a2541052665) with instructions and exercises. I'd suggest you work through this first to build some confidence.
 
-There are 4 common gotchas to developing on Windows to be aware of:   
+There are 4 common gotchas to developing on Windows to be aware of:
 
-1. Permissions. Please take a look at this [tutorial](https://chatgpt.com/share/67b0ae58-d1a8-8012-82ca-74762b0408b0) on permissions on Windows  
-2. Anti-virus, Firewall, VPN. These can interfere with installations and network access; try temporarily disabling them as needed  
-3. The evil Windows 260 character limit to filenames - here is a full [explanation and fix](https://chatgpt.com/share/67b0afb9-1b60-8012-a9f7-f968a5a910c7)!  
-4. If you've not worked with Data Science packages on your computer before, you might need to install Microsoft Build Tools. Here are [instructions](https://chatgpt.com/share/67b0b762-327c-8012-b809-b4ec3b9e7be0). A student also mentioned that [these instructions](https://github.com/bycloudai/InstallVSBuildToolsWindows) might be helpful for people on Windows 11.    
+1. Permissions. Please take a look at this [tutorial](https://chatgpt.com/share/67b0ae58-d1a8-8012-82ca-74762b0408b0) on permissions on Windows
+2. Anti-virus, Firewall, VPN. These can interfere with installations and network access; try temporarily disabling them as needed
+3. The evil Windows 260 character limit to filenames - here is a full [explanation and fix](https://chatgpt.com/share/67b0afb9-1b60-8012-a9f7-f968a5a910c7)!
+4. If you've not worked with Data Science packages on your computer before, you might need to install Microsoft Build Tools. Here are [instructions](https://chatgpt.com/share/67b0b762-327c-8012-b809-b4ec3b9e7be0). A student also mentioned that [these instructions](https://github.com/bycloudai/InstallVSBuildToolsWindows) might be helpful for people on Windows 11.
 
 ### Part 1: Clone the Repo
 
@@ -31,7 +31,7 @@ This gets you a local copy of the code on your box.
 1. **Install Git** (if not already installed):
 
 - Download Git from https://git-scm.com/download/win
-- Run the installer and follow the prompts, using default options (press OK lots of times!). 
+- Run the installer and follow the prompts, using default options (press OK lots of times!).
 - After the installation, you may need to open a new Powershell window to use it (or you might even need to restart)
 
 2. **Open Command Prompt:**
@@ -45,6 +45,7 @@ If you have a specific folder for projects, navigate to it using the cd command.
 Replacing YourUsername with your actual Windows user
 
 If you don't have a projects folder, you can create one:
+
 ```
 mkdir C:\Users\YourUsername\Documents\Projects
 cd C:\Users\YourUsername\Documents\Projects
@@ -73,8 +74,8 @@ If this Part 2 gives you any problems, there is an alternative Part 2B below tha
 - Navigate to the "project root directory" by entering something like `cd C:\Users\YourUsername\Documents\Projects\llm_engineering` using the actual path to your llm_engineering project root directory. Do a `dir` and check you can see subdirectories for each week of the course.
 - Create the environment: `conda env create -f environment.yml`
 - **If you get an ArchiveError issue, then this is caused by the Windows 260 character limit - see gotcha number 3 at the top**
-- Wait for a few minutes for all packages to be installed - in some cases, this can literally take 30 minutes if you've not used Anaconda before, and even longer depending on your internet connection. Important stuff is happening! If this runs for more than 1 hour 15 mins, or gives you other problems, please go to Part 2B instead.  
-- You have now built an isolated, dedicated AI environment for engineering LLMs, running vector datastores, and so much more! You now need to **activate** it using this command: `conda activate llms`  
+- Wait for a few minutes for all packages to be installed - in some cases, this can literally take 30 minutes if you've not used Anaconda before, and even longer depending on your internet connection. Important stuff is happening! If this runs for more than 1 hour 15 mins, or gives you other problems, please go to Part 2B instead.
+- You have now built an isolated, dedicated AI environment for engineering LLMs, running vector datastores, and so much more! You now need to **activate** it using this command: `conda activate llms`
 
 You should see `(llms)` in your prompt, which indicates you've activated your new environment.
 
@@ -88,7 +89,7 @@ You should see `(llms)` in your prompt, which indicates you've activated your ne
 
 1. **Open Command Prompt**
 
-Press Win + R, type `cmd`, and press Enter  
+Press Win + R, type `cmd`, and press Enter
 
 Run `python --version` to find out which python you're on.  
 Ideally you'd be using a version of Python 3.11, so we're completely in sync.  
@@ -96,25 +97,25 @@ I believe Python 3.12 works also, but (as of Feb 2025) Python 3.13 does **not** 
 If you need to install Python or install another version, you can download it here:  
 https://www.python.org/downloads/
 
-2. Navigate to the "project root directory" by entering something like `cd C:\Users\YourUsername\Documents\Projects\llm_engineering` using the actual path to your llm_engineering project root directory. Do a `dir` and check you can see subdirectories for each week of the course.  
+2. Navigate to the "project root directory" by entering something like `cd C:\Users\YourUsername\Documents\Projects\llm_engineering` using the actual path to your llm_engineering project root directory. Do a `dir` and check you can see subdirectories for each week of the course.
 
 Then, create a new virtual environment with this command:  
 `python -m venv llms`
 
 3. Activate the virtual environment with  
-`llms\Scripts\activate`
-You should see (llms) in your command prompt, which is your sign that things are going well.
+   `llms\Scripts\activate`
+   You should see (llms) in your command prompt, which is your sign that things are going well.
 
 4. Run `python -m pip install --upgrade pip` followed by `pip install -r requirements.txt`  
-This may take a few minutes to install.  
-If you see an error like this:
+   This may take a few minutes to install.  
+   If you see an error like this:
 
 > Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": [https://visualstudio.microsoft.com/visual-cpp-build-tools/](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
-Then please follow the link and install Microsoft C++ Build Tools. A student also mentioned that [these instructions](https://github.com/bycloudai/InstallVSBuildToolsWindows) might be helpful for people on Windows 11.   
+Then please follow the link and install Microsoft C++ Build Tools. A student also mentioned that [these instructions](https://github.com/bycloudai/InstallVSBuildToolsWindows) might be helpful for people on Windows 11.
 
 In the very unlikely event that this step doesn't go well, you should try the bullet-proof (but slower) version:  
-`pip install --retries 5 --timeout 15 --no-cache-dir --force-reinstall -r requirements.txt`
+`pip install --retries 5 --timeout 15 --no-cache-dir --force-reinstall -r requirements.txt`
 
 6. **Start Jupyter Lab:**
 
@@ -130,7 +131,7 @@ Particularly during weeks 1 and 2 of the course, you'll be writing code to call 
 For week 1, you'll only need OpenAI, and you can add the others if you wish later on.
 
 1. Create an OpenAI account if you don't have one by visiting:  
-https://platform.openai.com/
+   https://platform.openai.com/
 
 2. OpenAI asks for a minimum credit to use the API. For me in the US, it's \$5. The API calls will spend against this \$5. On this course, we'll only use a small portion of this. I do recommend you make the investment as you'll be able to put it to excellent use. But if you'd prefer not to pay for the API, I give you an alternative in the course using Ollama.
 
@@ -143,7 +144,8 @@ I recommend you disable the automatic recharge!
 
 The webpage where you set up your OpenAI key is at https://platform.openai.com/api-keys - press the green 'Create new secret key' button and press 'Create secret key'. Keep a record of the API key somewhere private; you won't be able to retrieve it from the OpenAI screens in the future. It should start `sk-proj-`.
 
-In week 2 we will also set up keys for Anthropic and Google, which you can do here when we get there.  
+In week 2 we will also set up keys for Anthropic and Google, which you can do here when we get there.
+
 - Claude API at https://console.anthropic.com/ from Anthropic
 - Gemini API at https://ai.google.dev/gemini-api from Google
 
@@ -163,7 +165,8 @@ When you have these keys, please create a new file called `.env` in your project
 OPENAI_API_KEY=xxxx
 ```
 
-If you have other keys, you can add them too, or come back to this in future weeks:  
+If you have other keys, you can add them too, or come back to this in future weeks:
+
 ```
 GOOGLE_API_KEY=xxxx
 ANTHROPIC_API_KEY=xxxx
@@ -175,26 +178,82 @@ Double check there are no spaces before or after the `=` sign, and no spaces at 
 
 3. Go to File > Save As. In the "Save as type" dropdown, select All Files. In the "File name" field, type exactly **.env** as the filename. Choose to save this in the project root directory (the folder called `llm_engineering`) and click Save.
 
-4. Navigate to the folder where you saved the file in Explorer and ensure it was saved as ".env" not ".env.txt" - if necessary rename it to ".env" -  you might need to ensure that "Show file extensions" is set to "On" so that you see the file extensions. Message or email me if that doesn't make sense!
+4. Navigate to the folder where you saved the file in Explorer and ensure it was saved as ".env" not ".env.txt" - if necessary rename it to ".env" - you might need to ensure that "Show file extensions" is set to "On" so that you see the file extensions. Message or email me if that doesn't make sense!
 
 This file won't appear in Jupyter Lab because jupyter hides files starting with a dot. This file is listed in the `.gitignore` file, so it won't get checked in and your keys stay safe.
 
 ### Part 5 - Showtime!!
 
 - Open **Anaconda Prompt** (search for it in the Start menu) if you used Anaconda, otherwise open a Powershell if you used the alternative approach in Part 2B
-  
 - Navigate to the "project root directory" by entering something like `cd C:\Users\YourUsername\Documents\Projects\llm_engineering` using the actual path to your llm_engineering project root directory. Do a `dir` and check you can see subdirectories for each week of the course.
 
 - Activate your environment with `conda activate llms` if you used Anaconda or `llms\Scripts\activate` if you used the alternative approach in Part 2B
 
-- You should see (llms) in your prompt which is your sign that all is well. And now, type: `jupyter lab` and Jupyter Lab should open up, ready for you to get started. Open the `week1` folder and double click on `day1.ipynb`. 
+- You should see (llms) in your prompt which is your sign that all is well. And now, type: `jupyter lab` and Jupyter Lab should open up, ready for you to get started. Open the `week1` folder and double click on `day1.ipynb`.
 
 And you're off to the races!
 
 Note that any time you start jupyter lab in the future, you'll need to follow these Part 5 instructions to start it from within the `llm_engineering` directory with the `llms` environment activated.
 
-For those new to Jupyter Lab / Jupyter Notebook, it's a delightful Data Science environment where you can simply hit shift+return in any cell to run it; start at the top and work your way down! There's a notebook in the week1 folder with a [Guide to Jupyter Lab](week1/Guide%20to%20Jupyter.ipynb), and an [Intermediate Python](week1/Intermediate%20Python.ipynb) tutorial, if that would be helpful. When we move to Google Colab in Week 3, you'll experience the same interface for Python runtimes in the cloud. 
+For those new to Jupyter Lab / Jupyter Notebook, it's a delightful Data Science environment where you can simply hit shift+return in any cell to run it; start at the top and work your way down! There's a notebook in the week1 folder with a [Guide to Jupyter Lab](week1/Guide%20to%20Jupyter.ipynb), and an [Intermediate Python](week1/Intermediate%20Python.ipynb) tutorial, if that would be helpful. When we move to Google Colab in Week 3, you'll experience the same interface for Python runtimes in the cloud.
 
 If you have any problems, I've included a notebook in week1 called [troubleshooting.ipynb](week1/troubleshooting.ipynb) to figure it out.
 
 Please do message me or email me at ed@edwarddonner.com if this doesn't work or if I can help with anything. I can't wait to hear how you get on.
+
+### Part 6 - Running TypeScript Notebooks with tslab
+
+To work with TypeScript notebooks in this project, follow these additional steps:
+
+1. **Create a new conda environment:**
+
+```bash
+conda create -n llms_ts nodejs
+```
+
+2. **Activate your environment:**
+
+```bash
+conda activate llms_ts
+```
+
+3. **Install Node.js if not already available:**
+
+```bash
+conda install -c conda-forge nodejs
+```
+
+4. **Install tslab globally with npm:**
+
+```bash
+npm install -g tslab
+```
+
+5. **Register the TypeScript kernel for JupyterLab:**
+
+```bash
+tslab install
+```
+
+6. **Verify that the TypeScript kernel is available:**
+
+```bash
+jupyter kernelspec list
+```
+
+You should see a `tslab` entry listed.
+
+7. **Launch JupyterLab:**
+
+```bash
+jupyter lab
+```
+
+8. **Using TypeScript Notebooks:**
+
+- In JupyterLab, create a new notebook and select the **TypeScript** kernel.
+- Write and execute TypeScript code in the notebooks, leveraging the environment.
+
+Note: You can switch between Python and TypeScript notebooks as needed. The TypeScript kernel will be available alongside the Python kernel in JupyterLab.
+
+If you have any problems with the TypeScript setup, please don't hesitate to reach out for help!
