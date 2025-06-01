@@ -6,12 +6,12 @@ Welcome, Linux people!
 
 I should reveal that I had ChatGPT make this document based on the Mac instructions, but then I went through and checked and tweaked some sections. If any of these instructions don't work for your distro, please do reach out and let me know - we'll figure it out, then I'll update the instructions for the future.
 
-___
+---
 
 Setting up a powerful environment to work at the forefront of AI requires some effort, but these instructions should guide you smoothly. If you encounter any issues, don't hesitate to reach out to me. I'm here to ensure you get set up without hassle.
 
 Email: ed@edwarddonner.com  
-LinkedIn: https://www.linkedin.com/in/eddonner/  
+LinkedIn: https://www.linkedin.com/in/eddonner/
 
 For this setup, we'll use Anaconda to create a reliable environment for your AI work. Alternatively, I've provided a lighter option if you prefer to avoid Anaconda. Let's get started!
 
@@ -33,6 +33,7 @@ If you have a specific folder for projects, navigate to it using the `cd` comman
 `cd ~/Projects`
 
 If you don't have a projects folder, you can create one:
+
 ```
 mkdir ~/Projects
 cd ~/Projects
@@ -58,7 +59,7 @@ If this Part 2 gives you any trouble, refer to the alternative Part 2B below.
 2. **Set up the environment:**
 
 - Open a terminal and navigate to the "project root directory" using:
-`cd ~/Projects/llm_engineering` (adjust the path as necessary).
+  `cd ~/Projects/llm_engineering` (adjust the path as necessary).
 - Run `ls` to confirm the presence of subdirectories for each week of the course.
 - Create the environment: `conda env create -f environment.yml`
 
@@ -71,7 +72,7 @@ You should see `(llms)` in your prompt, indicating successful activation.
 In some distributions this may be required so that the llms environment is visible in jupyter lab:
 
 `conda install ipykernel`  
-`python -m ipykernel install --user --name=llmenv`  
+`python -m ipykernel install --user --name=llmenv`
 
 3. **Start Jupyter Lab:**
 
@@ -118,18 +119,16 @@ Another possible solution if having build conflicts, is to update:
 
 `sudo pacman -S gcc gcc-fortran python-setuptools python-wheel`
 
-*Note:* gensim is broken if you have an updated version of scipy. You can either pin scipy to an older version, or 
+_Note:_ gensim is broken if you have an updated version of scipy. You can either pin scipy to an older version, or
 erase gensim from the requirements.txt for the moment. (See: https://aur.archlinux.org/packages/python-gensim)
 
 Lastly, so that the kernel is visible after step (6) in jupyter lab :
 `python -m ipykernel install --user --name=llmenv`
 `ipython kernel install --user --name=llmenv`
 
-
 6. **Start Jupyter Lab:**
 
 From the `llm_engineering` folder, run: `jupyter lab`.
-
 
 ### Part 3 - OpenAI key (OPTIONAL but recommended)
 
@@ -138,7 +137,7 @@ Particularly during weeks 1 and 2 of the course, you'll be writing code to call 
 For week 1, you'll only need OpenAI, and you can add the others if you wish later on.
 
 1. Create an OpenAI account if you don't have one by visiting:
-https://platform.openai.com/
+   https://platform.openai.com/
 
 2. OpenAI asks for a minimum credit to use the API. For me in the US, it's \$5. The API calls will spend against this \$5. On this course, we'll only use a small portion of this. I do recommend you make the investment as you'll be able to put it to excellent use. But if you'd prefer not to pay for the API, I give you an alternative in the course using Ollama.
 
@@ -151,7 +150,8 @@ I recommend you disable the automatic recharge!
 
 The webpage where you set up your OpenAI key is at https://platform.openai.com/api-keys - press the green 'Create new secret key' button and press 'Create secret key'. Keep a record of the API key somewhere private; you won't be able to retrieve it from the OpenAI screens in the future. It should start `sk-proj-`.
 
-In week 2 we will also set up keys for Anthropic and Google, which you can do here when we get there.  
+In week 2 we will also set up keys for Anthropic and Google, which you can do here when we get there.
+
 - Claude API at https://console.anthropic.com/ from Anthropic
 - Gemini API at https://ai.google.dev/gemini-api from Google
 
@@ -177,7 +177,8 @@ nano .env
 OPENAI_API_KEY=xxxx
 ```
 
-If you have other keys, you can add them too, or come back to this in future weeks:  
+If you have other keys, you can add them too, or come back to this in future weeks:
+
 ```
 GOOGLE_API_KEY=xxxx
 ANTHROPIC_API_KEY=xxxx
@@ -203,7 +204,7 @@ This file won't appear in Jupyter Lab because jupyter hides files starting with 
 
 1. Open a terminal.
 2. Navigate to the "project root directory" using:
-`cd ~/Projects/llm_engineering`.
+   `cd ~/Projects/llm_engineering`.
 3. Activate your environment:
    - If you used Anaconda: `conda activate llms`
    - If you used the alternative: `source llms/bin/activate`
@@ -212,3 +213,59 @@ You should see `(llms)` in your prompt. Run: `jupyter lab` to get started.
 
 Enjoy your journey into mastering AI and LLMs!
 
+### Part 6 - Running TypeScript Notebooks with tslab
+
+To work with TypeScript notebooks in this project, follow these additional steps:
+
+1. **Create a new conda environment:**
+
+```bash
+conda create -n llms_ts nodejs
+```
+
+2. **Activate your environment:**
+
+```bash
+conda activate llms_ts
+```
+
+3. **Install Node.js if not already available:**
+
+```bash
+conda install -c conda-forge nodejs
+```
+
+4. **Install tslab globally with npm:**
+
+```bash
+npm install -g tslab
+```
+
+5. **Register the TypeScript kernel for JupyterLab:**
+
+```bash
+tslab install
+```
+
+6. **Verify that the TypeScript kernel is available:**
+
+```bash
+jupyter kernelspec list
+```
+
+You should see a `tslab` entry listed.
+
+7. **Launch JupyterLab:**
+
+```bash
+jupyter lab
+```
+
+8. **Using TypeScript Notebooks:**
+
+- In JupyterLab, create a new notebook and select the **TypeScript** kernel.
+- Write and execute TypeScript code in the notebooks, leveraging the environment.
+
+Note: You can switch between Python and TypeScript notebooks as needed. The TypeScript kernel will be available alongside the Python kernel in JupyterLab.
+
+If you have any problems with the TypeScript setup, please don't hesitate to reach out for help!
